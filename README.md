@@ -1,27 +1,41 @@
-# ManduDivisionFrontend
+<p align="center">
+  <img src="https://angular.io/assets/images/logos/angular/angular.svg" width="120" alt="Angular Logo" />
+</p>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.2.
+<h1 align="center">Mandü - División Frontend</h1>
 
-## Development server
+<p align="center">
+  Proyecto desarrollado como parte del <b>Reto Técnico 2025 - Full Stack Developer (Mandü)</b>.<br>
+  Este frontend está construido con Angular y NG-ZORRO, e implementa la gestión de divisiones organizacionales con conexión al backend desarrollado en NestJS.
+</p>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+## 🚀 Tecnologías Utilizadas
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Angular 17+**
+- **TypeScript**
+- **NG-ZORRO (UI Components)**
+- **RxJS / Observables**
+- **HTML5 / SCSS / Responsive Design**
+- **Backend API:** NestJS (ver [mandu-division-backend](https://github.com/Henry7412/mandu-division-backend))
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## ⚙️ Instalación y Ejecución
 
-## Running unit tests
+```bash
+# Clonar el repositorio
+git clone https://github.com/Henry7412/mandu-division-frontend.git
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+# Ingresar al directorio del proyecto
+cd mandu-division-frontend
 
-## Running end-to-end tests
+# Instalar dependencias
+pnpm install
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+# Ejecutar la aplicación en modo desarrollo
+pnpm start
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+# La app estará disponible en:
+# 👉 http://localhost:4200

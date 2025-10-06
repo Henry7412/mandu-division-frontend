@@ -1,0 +1,91 @@
+<div class="page-container">
+    <!-- Encabezado -->
+    <div class="page-header">
+        <div class="header-left">
+            <h2>Organización</h2>
+
+            <div class="tab-secondary">
+                <button class="tab-item" [ngClass]="{ 'active': activeTab === 'divisions' }"
+                    (click)="activeTab = 'divisions'">Divisiones</button>
+                <button class="tab-item" [ngClass]="{ 'active': activeTab === 'collaborators' }"
+                    (click)="activeTab = 'collaborators'">Colaboradores</button>
+            </div>
+        </div>
+
+        <div class="actions">
+            <button class="logo-button" (click)="openCreateModal()">
+                <img src="assets/logo/boton-primario-azul.png" alt="Crear" />
+            </button>
+            <button class="logo-button">
+                <img src="assets/logo/exportar.png" alt="exportar" />
+            </button>
+            <button class="logo-button">
+                <img src="assets/logo/importar.png" alt="importar" />
+            </button>
+        </div>
+    </div>
+
+    <!-- Filtros y vista -->
+    <div class="filters">
+        <div class="tabs">
+            <button class="custom-tab-button active-tab" (click)="viewMode = 'list'">Listado</button>
+            <button class="custom-tab-button" (click)="viewMode = 'tree'">Árbol</button>
+        </div>
+
+        <div class="search-tools">
+            <nz-select class="search-control" nzPlaceHolder="Columnas" nzSize="small"></nz-select>
+
+            <nz-input-group>
+                <input class="search-control" nz-input placeholder="Buscar" />
+                <i nz-icon nzType="search" nzTheme="outline"></i>
+            </nz-input-group>
+        </div>
+    </div>
+
+    <!-- Tabla de divisiones -->
+    <nz-spin [nzSpinning]="loading">
+        <nz-table [nzData]="divisions" [nzBordered]="true" [nzSize]="'middle'" [nzFrontPagination]="true"
+            [nzPageSize]="10" [nzShowPagination]="true" [nzShowSizeChanger]="false">
+            <thead>
+                <tr>
+                    <th></th>
+
+                    <th>División</th>
+                    <th>División superior</th>
+                    <th>Colaboradores</th>
+                    <th>Nivel</th>
+                    <th>Subdivisiones</th>
+                    <th>Embajadores</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let item of divisions">
+                    <td></td>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.parentDivision || '-' }}</td>
+
+                    <td>{{ item.collaborators }}</td>
+                    <td>{{ item.level }}</td>
+                    <td>
+                        <span class="sub-badge" (click)="openSubdivisionsModal(item)">
+                            + {{ subdivisionsMap[item.id].length || 0 }}
+                        </span>
+                    </td>
+                    <td>{{ item.ambassador || '-' }}</td>
+                    <td class="actions-col">
+                        <button nz-button nzType="default" nzSize="small" (click)="openEditModal(item)">Editar</button>
+                        <button nz-button nzType="default" nzDanger nzSize="small"
+                            (click)="deleteDivision(item.id)">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </nz-table>
+    </nz-spin>
+
+    <!-- Total de colaboradores -->
+    <div class="total-colaboradores">
+        Total colaboradores: {{ totalCollaborators }}
+    </div>
+</div>

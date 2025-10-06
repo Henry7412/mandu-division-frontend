@@ -1,0 +1,42 @@
+<form nz-form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <nz-form-item>
+        <nz-form-label nzRequired nzFor="name">Nombre</nz-form-label>
+        <nz-form-control>
+            <input nz-input formControlName="name" placeholder="Ingrese nombre de la división" />
+        </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+        <nz-form-label nzFor="level">Nivel</nz-form-label>
+        <nz-form-control>
+            <input nz-input type="number" formControlName="level" />
+        </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+        <nz-form-label nzFor="collaborators">Colaboradores</nz-form-label>
+        <nz-form-control>
+            <input nz-input type="number" formControlName="collaborators" />
+        </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+        <nz-form-label nzFor="ambassador">Embajador</nz-form-label>
+        <nz-form-control>
+            <input nz-input formControlName="ambassador" />
+        </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+        <nz-form-label nzFor="parentDivisionId">División Superior</nz-form-label>
+        <nz-form-control>
+            <nz-select formControlName="parentDivisionId" nzAllowClear nzPlaceHolder="Seleccione una división superior">
+                <nz-option *ngFor="let d of divisions" [nzValue]="d.id" [nzLabel]="d.name"></nz-option>
+            </nz-select>
+        </nz-form-control>
+    </nz-form-item>
+
+    <div class="text-right">
+        <button nz-button nzType="primary" [disabled]="form.invalid">Guardar</button>
+    </div>
+</form>

@@ -1,0 +1,69 @@
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 54px;
+    padding: 0 24px;
+    background: linear-gradient(90deg, #2E52F8 0%, #56A7F2 100%);
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    .topbar-left {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        .logo {
+            height: 24px;
+        }
+
+        .menu {
+            display: flex;
+            gap: 16px;
+
+            .menu-item {
+                color: white;
+                font-size: 14px;
+                cursor: pointer;
+                padding: 4px 8px;
+                border-radius: 4px;
+                transition: background 0.2s ease;
+
+                &.active,
+                &:hover {
+                    background: rgba(255, 255, 255, 0.2);
+                }
+            }
+        }
+    }
+
+    .topbar-right {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        .username {
+            font-size: 14px;
+        }
+
+        .avatar {
+            background-color: #ffffff33;
+            color: white;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .logo-right {
+            height: 24px;
+            margin-left: 8px;
+            background: white;
+            border-radius: 4px;
+            padding: 2px 6px;
+        }
+    }
+}
