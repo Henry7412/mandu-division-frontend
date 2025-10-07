@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    apiUrl: 'https://mandu-division-backend.onrender.com',
+    apiUrl: 'https://mandu-division-frontend.onrender.com',
 };
