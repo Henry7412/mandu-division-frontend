@@ -35,7 +35,7 @@ cd mandu-division-frontend
 pnpm install
 
 # Ejecutar la aplicación en modo desarrollo
-pnpm start
+pnpm run start
 
 # La app estará disponible en:
 # 👉 http://localhost:4200
